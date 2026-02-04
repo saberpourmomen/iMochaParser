@@ -1,0 +1,157 @@
+{
+  "info": {
+    "_postman_id": "1b873db2-864f-48ef-a55c-9aef63b02975",
+    "name": "imocha-parser",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20445855",
+    "_collection_link": "https://go.postman.co/collection/20445855-1b873db2-864f-48ef-a55c-9aef63b02975?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "search",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/call-record/search",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "call-record",
+            "search"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "reportByAccount",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/report/account",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "report",
+            "account"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "caller-type",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/report/caller-type",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "report",
+            "caller-type"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "daily",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/report/daily",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "report",
+            "daily"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "upload",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "573073a0-774b-4dc8-92b5-005330fc1f25",
+              "src": "/D:/Projects/parser/src/main/resources/resources/012.20260130.zip"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{host}}/upload/zip",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "upload",
+            "zip"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": ""
+    }
+  ]
+}
