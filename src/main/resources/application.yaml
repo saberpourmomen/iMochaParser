@@ -25,7 +25,11 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
-
+  sql:
+    init:
+      mode: always
   batch:
+    jdbc:
+      initialize-schema: always
     job:
       enabled: false

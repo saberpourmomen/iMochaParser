@@ -1,6 +1,7 @@
 package com.imocha.parser.util;
 
 import com.imocha.parser.dto.CallType;
+import com.imocha.parser.exception.ParseException;
 import com.imocha.parser.model.CallRecord;
 import org.springframework.stereotype.Component;
 
@@ -49,7 +50,7 @@ public class CallRecordParser {
         try {
             return LocalDateTime.parse(value, FORMATTER);
         } catch (DateTimeParseException e) {
-            throw new IllegalArgumentException("Invalid " + field + ": " + value);
+            throw new ParseException("Invalid " + field + ": " + value);
         }
     }
 
@@ -57,7 +58,7 @@ public class CallRecordParser {
         try {
             return CallType.valueOf(value);
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Invalid call type: " + value);
+            throw new ParseException("Invalid call type: " + value);
         }
     }
 
@@ -65,7 +66,7 @@ public class CallRecordParser {
         try {
             return new BigDecimal(value);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Invalid cost: " + value);
+            throw new ParseException("Invalid cost: " + value);
         }
     }
 

@@ -1,8 +1,10 @@
 package com.imocha.parser.service;
 
+import com.imocha.parser.exception.JobExecutionException;
 import com.imocha.parser.repository.CallRecordRepository;
 import com.imocha.parser.util.FileNameValidator;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -20,6 +22,7 @@ import java.util.zip.ZipInputStream;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class FileProcessingService {
     private final CallRecordRepository callRecordRepository;
     private final JobLauncher jobLauncher;
@@ -37,7 +40,7 @@ public class FileProcessingService {
                 if (!FileNameValidator.isValidate(entry)) {
                     continue;
                 }
-
+                log.info("{} Start Processing File:{}{}","*".repeat(8),entry.getName(),"*".repeat(8));
                 Path tempFile = Files.createTempFile(
                         "call_", "_" + entry.getName()
                 );
@@ -56,7 +59,7 @@ public class FileProcessingService {
             }
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed to process ZIP file", e);
+            throw new JobExecutionException("Failed to process ZIP file",e);
         }
     }
 
