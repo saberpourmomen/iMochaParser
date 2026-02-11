@@ -23,15 +23,15 @@ per day).
 The format of the file is given in the table
 below:
 
-| FIELD | WIDTH | DESCRIPTION                                                         |
-|-------|:-----:|:--------------------------------------------------------------------|
-| 1     |  10   | ACCNUM-account number of customer (10 characters in length)         |
-| 2     |  15   | A_NUM-phone number making the call (10-15 characters in length)     |
-| 3     |  15   | B_NUM-phone number which was dialled (10-15 characters in length)   |
-| 4     |  14   | STT TIME-timestamp when call was started in format "YYYYMMDDHHMISS" |
-| 5     |  14   | END TIME-timestamp when call was ended in format "YYYYMMDDHHMISS"   |
-| 6     |   1   | CALL TYPE - "P" phone call, "S" = SMS, "M" = multimedia message     |
-| 7     |   5   | CALL COST - integer value for cost of call in sen, e.g. 1, 2, 10    |
+|  FIELD  | WIDTH | DESCRIPTION                                                         |
+|:-------:|:-----:|:--------------------------------------------------------------------|
+|    1    |  10   | ACCNUM-account number of customer (10 characters in length)         |
+|    2    |  15   | A_NUM-phone number making the call (10-15 characters in length)     |
+|    3    |  15   | B_NUM-phone number which was dialled (10-15 characters in length)   |
+|    4    |  14   | STT TIME-timestamp when call was started in format "YYYYMMDDHHMISS" |
+|    5    |  14   | END TIME-timestamp when call was ended in format "YYYYMMDDHHMISS"   |
+|    6    |   1   | CALL TYPE - "P" phone call, "S" = SMS, "M" = multimedia message     |
+|    7    |   5   | CALL COST - integer value for cost of call in sen, e.g. 1, 2, 10    |
 
 Values are right-padded with space. An example of the input file is as follows:
 
