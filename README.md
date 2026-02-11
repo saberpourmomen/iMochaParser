@@ -25,7 +25,6 @@ below:
 
 | FIELD | WIDTH | DESCRIPTION  |
 |-------|:-----:| -----:|
-| 
 | 1     |  10   |    ACCNUM-account number of customer (10 characters in length)|
 | 2     |  15   |    A_NUM-phone number making the call (10-15 characters in length)|
 | 3     |  15   |    B_NUM-phone number which was dialled (10-15 characters in length)|
@@ -64,4 +63,4 @@ for testing application you can use:
 * postman collection jason from the path:
   * `src/main/resources/resources/imocha-parser.postman_collection.json`
 * report example zip file path:
-  *`src/main/resources/resources/012.20260130.zip` 
+  * `src/main/resources/resources/012.20260130.zip` 
